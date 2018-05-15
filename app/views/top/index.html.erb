@@ -1,0 +1,18 @@
+<h1>Top画面じゃボケ</h1>
+<p>Qき　れいるず</p>
+
+<form method="post" action="top/getdata">
+ <p>
+  id：<input type="text" name="id" /><br />
+  name：<input type="text" name="name" /><br />
+ <input type="submit" value="送信" />
+ </p>
+</form>
+
+<%= form_tag("top/aaa", method: "post") do %>
+  <%= label_tag(:id, "id:") %>
+  <%= text_field_tag(:id) %>
+  <%= label_tag(:name, "name:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("検索") %>
+<% end %>

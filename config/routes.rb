@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :items
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'helloworld' => 'top#index'
+  #resources :items
+  get 'top' => 'top#index'
+  get "travels/show/:id" => "top#show"
+  post "top/getdata" => "top#get_data"
+  post "top/aaa" => "top#aaa"
 end
+

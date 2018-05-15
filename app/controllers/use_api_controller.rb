@@ -1,0 +1,3 @@
+class UseApiController < ApplicationController
+
+end

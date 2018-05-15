@@ -1,0 +1,14 @@
+<body>
+
+<%= form_for @index do |f| %>
+  <div class="aaa">
+    <%= f.label :prefecture, "都道府県" %>
+    <%= f.text_field :prefecture %>
+  </div>
+
+    <div class="actions">
+    <%= f.submit "登録する" %>
+  </div>
+
+<% end %>
+</body>
