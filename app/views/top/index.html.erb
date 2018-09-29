@@ -1,18 +1,23 @@
-<h1>Top画面じゃボケ</h1>
-<p>Qき　れいるず</p>
+<script>
+    function getPrefectureId() {
+        var prefecture_id = document.pre_form.prefecture.selectedIndex;
+        console.log(prefecture_id);
+    }
 
-<form method="post" action="top/getdata">
- <p>
-  id：<input type="text" name="id" /><br />
-  name：<input type="text" name="name" /><br />
- <input type="submit" value="送信" />
- </p>
+
+</script>
+
+<h1>top/index.html.erb</h1>
+
+<form action="top/get" method="post" name="pre_data">
+    <select name="prefecture">
+        <% @select_box_pref_data.each do |pref_data| %>
+            <option value="<%= pref_data['prefCode'] %>"><%= pref_data['prefName'] %></option>
+        <% end %>
+    </select>
+
+    <input type="submit" value="検索">
+    <input type="button" value="js" onclick="getPrefectureId();">
 </form>
 
-<%= form_tag("top/aaa", method: "post") do %>
-  <%= label_tag(:id, "id:") %>
-  <%= text_field_tag(:id) %>
-  <%= label_tag(:name, "name:") %>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("検索") %>
-<% end %>
+<%= javascript_include_tag "application" %>
