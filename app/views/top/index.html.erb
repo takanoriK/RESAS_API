@@ -1,13 +1,4 @@
-<script>
-    function getPrefectureId() {
-        var prefecture_id = document.pre_form.prefecture.selectedIndex;
-        console.log(prefecture_id);
-    }
-
-
-</script>
-
-<h1>top/index.html.erb</h1>
+<h1>Top画面</h1>
 
 <form action="top/get" method="post" name="pre_data">
     <select name="prefecture">
@@ -17,7 +8,4 @@
     </select>
 
     <input type="submit" value="検索">
-    <input type="button" value="js" onclick="getPrefectureId();">
 </form>
-
-<%= javascript_include_tag "application" %>

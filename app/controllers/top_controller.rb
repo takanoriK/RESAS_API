@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   protect_from_forgery except: :get_data
-
+  
   @@api =UseApiController.new()
 
   def index
@@ -15,7 +15,7 @@ class TopController < ApplicationController
       @pref_id = params[:prefecture]
 
       @data = commonPrefecturesData()
-      p @data
+      render "get"
   end
 
 
