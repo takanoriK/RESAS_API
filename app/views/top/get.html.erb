@@ -1,4 +1,9 @@
 <h1>ああああああ</h1>
 <p>
-<%= @data %>です。
+
+<% @images.each do |images_data| %>
+    <img src="<%= images_data['contentUrl'] %>" alt="写真" width="300" height="200">
+<% end %>
+
+
 </p>
