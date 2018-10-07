@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20180414070920) do
 
+  create_table "gourmet", primary_key: "gourmet_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "prefecture_id",       limit: 1
+    t.string   "gourmet_name"
+    t.text     "gourmet_description", limit: 65535
+    t.datetime "created_at_datetime"
+    t.datetime "updated_at_datetime"
+  end
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "amount"

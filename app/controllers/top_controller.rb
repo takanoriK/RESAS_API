@@ -11,12 +11,15 @@ class TopController < ApplicationController
 
   def get
       pref_name = params['pref_name']
-      @pref_id = params[:prefecture]
+      pref_id = params[:prefecture]
       
+      @get_data = []
+      @get_data = Menu.new.getData(pref_id)
+      logger.debug(@get_data)
       #DBから取得したデータをBingSearchApiに渡す
-      term = "マキシマムザホルモン"
-      image_data = @@api.getBingSearchImageData(term)
-      @images = image_data['value']
+      ##term = "マキシマムザホルモン"
+      ##image_data = @@api.getBingSearchImageData(term)
+      ##@images = image_data['value']
       render "get"
   end
 
