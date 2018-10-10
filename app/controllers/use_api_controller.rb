@@ -20,8 +20,8 @@ class UseApiController < ApplicationController
     end
 
     def getBingSearchImageData(term)
-        accessKey = "ぱすわーど"
-        uri       = "https://api.cognitive.microsoft.com"
+        accessKey = "7d40cc439b27453f8da365106bb1df9d"
+        uri       = "ぱすわーど"
         path      = "/bing/v7.0/images/search"
 
         if accessKey.length != 32 then

@@ -1,6 +1,8 @@
-<h1>ああああああ</h1>
+<h1><% @pref_name %></h1>
 <p>
 
+<% @get_data.each do |member| %>
+  <p><%= member %></p>
+<% end %>
 
-<% @get_data %>
 </p>

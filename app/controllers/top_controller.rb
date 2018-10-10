@@ -1,5 +1,6 @@
 class TopController < ApplicationController
   protect_from_forgery except: :get_data
+  protect_from_forgery :except => [:get]
 
   @@api = UseApiController.new()
 
@@ -10,12 +11,11 @@ class TopController < ApplicationController
   end
 
   def get
-      pref_name = params['pref_name']
       pref_id = params[:prefecture]
+      pref_name = params[:name]
       
-      @get_data = []
-      @get_data = Menu.new.getData(pref_id)
-      logger.debug(@get_data)
+      @get_data = Menu.new.getData()
+      logger.debug(pref_name)
       #DBから取得したデータをBingSearchApiに渡す
       ##term = "マキシマムザホルモン"
       ##image_data = @@api.getBingSearchImageData(term)
