@@ -20,8 +20,8 @@ class UseApiController < ApplicationController
     end
 
     def getBingSearchImageData(term)
-        accessKey = "7d40cc439b27453f8da365106bb1df9d"
-        uri       = "ぱすわーど"
+        accessKey = "ぱすわーど"
+        uri       = "https://api.cognitive.microsoft.com"
         path      = "/bing/v7.0/images/search"
 
         if accessKey.length != 32 then
@@ -40,6 +40,13 @@ class UseApiController < ApplicationController
         end
         
         result = JSON.parse(response.body)
-        
+
+        image_url = []
+        image_first = result['value']
+        image_first.first(1).each do |val|
+            image_url = val['contentUrl']
+        end
+
+        return image_url
     end
 end

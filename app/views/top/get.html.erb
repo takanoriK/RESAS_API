@@ -1,8 +1,12 @@
-<h1><% @pref_name %></h1>
+<h1>ご当地グルメ検索結果</h1>
 <p>
 
 <% @get_data.each do |member| %>
   <p><%= member %></p>
+<% end %>
+
+<% @imagedata.each do |val| %>
+    <img src="<%= val %>" alt="写真" width="300" height="200">
 <% end %>
 
 </p>

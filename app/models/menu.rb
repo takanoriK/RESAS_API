@@ -3,7 +3,7 @@ class Menu < ApplicationRecord
     self.primary_key = "gourmet_id"
     belongs_to :gourmet
 
-    def getData()
-        data = Menu.where(prefecture_id: 1).pluck(:gourmet_name)
+    def getData(pref_id)
+        data = Menu.where(prefecture_id: pref_id).pluck(:gourmet_name)
     end
 end
