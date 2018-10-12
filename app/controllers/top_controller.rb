@@ -12,10 +12,7 @@ class TopController < ApplicationController
 
   def get
       pref_id = params[:prefecture]
-      pref_name = params[:name]
-      
       @get_data = Menu.new.getData(pref_id)
-
       @images = @get_data
       @imagedata = []
       @images.map{|image|

@@ -20,7 +20,7 @@ class UseApiController < ApplicationController
     end
 
     def getBingSearchImageData(term)
-        accessKey = "ぱすわーど"
+        accessKey = "パスワード"
         uri       = "https://api.cognitive.microsoft.com"
         path      = "/bing/v7.0/images/search"
 
